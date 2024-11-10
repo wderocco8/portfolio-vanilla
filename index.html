@@ -3,24 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>William De Rocco (about me)</title>
+    <title>William De Rocco | Portfolio</title>
     <meta name="description" content="Short web-page about myself." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    
     <!-- Navigation bar -->
     <nav class="navbar">
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#interests">Interests</a></li>
-        <!-- Add more nav items as needed -->
       </ul>
     </nav>
 
     <div class="container">
-
       <!-- Name and info -->
       <div class="profile-flex">
         <div>
@@ -46,7 +44,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img class="profile-img" src="images/profile.jpeg" alt="profile" />
+            <img class="profile-img" src="images/profile/profile.jpeg" alt="profile" />
           </a>
         </div>
       </div>
@@ -70,15 +68,54 @@
 
       <div class="content-separator"></div>
 
+      <!-- Projects -->
+      <h2 id="projects">Projects</h2>
+      <div class="projects-container">
+        <!-- project 1 -->
+        <a
+          href="https://github.com/wderocco8/Grub-Gallery"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="project-link tilt tilt-small"
+        >
+          <div class="project">
+            <img src="images/projects/grub-gallery.jpeg" alt="Grub Gallery" />
+            <h3>Grub Gallery</h3>
+            <p>
+              Grub Gallery is a dynamic web application built using the MERN stack, integrating Google OAuth, Spoonacular API, and Google Calendar API. This project allows users to discover and personalize dishes and recipes effortlessly.
+            </p>
+          </div>
+        </a>
+
+        <!-- project 2 -->
+        <a
+          href="https://github.com/wderocco8/ZipSurf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="project-link tilt tilt-small"
+        >
+          <div class="project">
+            <img src="images/projects/zipsurf.png" alt="ZipSurf" />
+            <h3>ZipSurf</h3>
+            <p>
+              ZipSurf is a React based web application designed to enabling users to create, save, delete, and export shortened URLs
+            </p>
+          </div>
+        </a>
+        <!-- Add more project blocks as needed -->
+      </div>
+
+      <div class="content-separator"></div>
+
       <!-- Activites and Interests -->
-      <h2 id="interests">What I do in my free time?</h2>
+      <h2 id="interests">How I spend my free time?</h2>
       <div class="interests-table-container">
         <table class="interests-table">
           <!-- activity 1 -->
           <tr>
             <td>
               <img
-                src="images/coding.jpeg"
+                src="images/activities/coding.jpeg"
                 alt="coding with David Malin at HackHarvard"
               />
             </td>
@@ -137,7 +174,7 @@
           <tr>
             <td>
               <img
-                src="images/rock-climbing.png"
+                src="images/activities/rock-climbing.png"
                 alt="rock climbing at FitRec"
               />
             </td>
@@ -171,7 +208,7 @@
           <tr>
             <td>
               <img
-                src="images/pct.jpeg"
+                src="images/activities/pct.jpeg"
                 alt="tabling with PCT (Phi Chi Theta)"
               />
             </td>
@@ -211,7 +248,7 @@
           <!-- activity 4 -->
           <tr>
             <td>
-              <img src="images/cooking.jpeg" alt="cooking with my mom" />
+              <img src="images/activities/cooking.jpeg" alt="cooking with my mom" />
             </td>
             <td>
               <h3>Cooking</h3>
@@ -248,6 +285,7 @@
               </ul>
             </td>
           </tr>
+          <!-- Add more activity table rows as needed -->
         </table>
       </div>
     </div>

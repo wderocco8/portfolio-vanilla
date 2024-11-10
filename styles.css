@@ -1,6 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Courier New', monospace;
-  background-image: linear-gradient(to bottom, #99e2fe, #fddabe87);
+  background-image: linear-gradient(to bottom, #99e1fe, #fddabe87);
   background-color: #99e2fe;
   min-height: 100vh;
 }
@@ -26,6 +30,46 @@ ul {
   line-height: 200%;
   padding-left: 0;
   margin: 0;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: #99e2fe;
+  padding: 1rem 0;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 18px;
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 .profile-flex {
@@ -76,48 +120,60 @@ ul {
   vertical-align: top;
 }
 
-/* Fixed navigation bar */
-.navbar {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  background-color: #99e2fe;
-  padding: 1rem 0;
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: stretch;
+  gap: 20px;
+  margin: 40px 0;
 }
 
-
-
-.nav-links {
+.project {
+  background-color: #ffe2d9;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: center;
-  gap: 2rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box; /* Ensure padding is included in width (needed to prevent overlapping cards) */
 }
 
-.nav-links a {
+.project-link {
   text-decoration: none;
-  color: #000000;
-  font-size: 18px;
-  position: relative;
-  padding: 5px 0;
+  color: inherit;
 }
 
-/* Underline animation on hover */
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #000000;
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
+.project img {
   width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.project h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.project p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.project a {
+  text-decoration: none;
+  color: #2c12ed;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.project a:hover {
+  color: #f148c8;
 }
 
 /************************** tilting card effect  ***************************/

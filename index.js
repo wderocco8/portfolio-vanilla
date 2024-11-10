@@ -2,7 +2,7 @@
 const tiltEls = document.querySelectorAll(".tilt");
 
 const tiltMove = (x, y) =>
-  `perspective(500px) scale(1.05) rotateX(${x}deg) rotateY(${y}deg)`; // Reduced scale for subtle effect
+  `perspective(500px) rotateX(${x}deg) rotateY(${y}deg)`; // Reduced scale for subtle effect
 
 tiltEls.forEach((tilt) => {
   const height = tilt.clientHeight;
@@ -18,7 +18,9 @@ tiltEls.forEach((tilt) => {
   tilt.addEventListener("mousemove", (e) => {
     const x = e.layerX;
     const y = e.layerY;
-    const multiplier = 15; // Adjust this to change tilt intensity
+
+    // Set multiplier based on the class
+    const multiplier = tilt.classList.contains("tilt-small") ? 5 : 15;
 
     const xRotate = multiplier * ((y - height / 2) / height); // Swapped x and y for more intuitive control
     const yRotate = -multiplier * ((x - width / 2) / width);
@@ -36,6 +38,7 @@ tiltEls.forEach((tilt) => {
   tilt.style.transformOrigin = "center";
   requestAnimationFrame(updateTilt);
 });
+
 
 /******************** typewriter -> source: https://css-tricks.com/snippets/css/typewriter-effect/ ********************/
 var TxtType = function (el, toRotate, period) {
