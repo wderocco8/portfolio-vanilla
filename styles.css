@@ -1,0 +1,131 @@
+body {
+  font-family: 'Courier New', monospace;
+  background-image: linear-gradient(to bottom, #99e2fe, #fddabe87);
+}
+
+.container {
+  max-width: 80%;
+  margin: 80px auto; /* Center the container */
+}
+
+.content-separator {
+  height: 60px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 150%;
+}
+
+ul {
+  list-style-type: none;
+  font-size: 20px;
+  line-height: 200%;
+  padding-left: 0;
+  margin: 0;
+}
+
+.profile-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space between items */
+  width: 90%; /* Make the flex container take the full width of the container */
+}
+
+.interests-table-container {
+  background-color: #ffe2d9;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Initially hide rows with opacity */
+.interests-table tr {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 2s ease, transform 1s ease;
+}
+
+/* Fade-in class */
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.interests-table img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.interests-table td:nth-child(1) {
+  width: 30%;
+  padding-right: 30px;
+}
+
+.interests-table td:nth-child(2) {
+  width: 50%;
+  padding-right: 30px;
+  vertical-align: top;
+}
+
+.interests-table td:nth-child(3) {
+  width: 20%;
+  vertical-align: top;
+}
+
+/************************** tilting card effect  ***************************/
+.tilt {
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+
+/************************** glowing border effect  ***************************/
+.profile-img {
+  border-radius: 50%;
+  width: 400px;
+  border: 5px solid rgb(185, 120, 0);
+}
+
+/* source: https://www.youtube.com/watch?v=ezP4kbOvs_E&list=PLZ6KBrFKcaDtqcqHv9NUCpul8a2B3F33F&index=6 */
+.profile {
+  position: relative;
+}
+  
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.profile:hover::after, 
+.profile:hover::before {
+  content: '';
+  position: absolute;
+  height: 99%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), #bb4ec4, #f148c8, #2c12ed, #ffa500, #bb4ec4);
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  z-index: -1;
+  animation: 3s spin linear infinite;
+  transform: translate(0, 0);
+  transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out, background-image 0.5s ease-in-out;
+}
+
+
+.profile:hover::before {
+  filter: blur(2rem);
+  opacity: 1;
+  transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out, background-image 0.5s ease-in-out;
+}
+
+@keyframes spin{
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+}
+/*****************************************************************************/
