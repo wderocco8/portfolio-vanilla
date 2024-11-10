@@ -1,11 +1,14 @@
 body {
   font-family: 'Courier New', monospace;
   background-image: linear-gradient(to bottom, #99e2fe, #fddabe87);
+  background-color: #99e2fe;
+  min-height: 100vh;
 }
 
 .container {
   max-width: 80%;
-  margin: 80px auto; /* Center the container */
+  margin: 80px auto;
+  padding-top: 80px;
 }
 
 .content-separator {
@@ -28,8 +31,8 @@ ul {
 .profile-flex {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Space between items */
-  width: 90%; /* Make the flex container take the full width of the container */
+  justify-content: space-between;
+  width: 90%;
 }
 
 .interests-table-container {
@@ -71,6 +74,50 @@ ul {
 .interests-table td:nth-child(3) {
   width: 20%;
   vertical-align: top;
+}
+
+/* Fixed navigation bar */
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: #99e2fe;
+  padding: 1rem 0;
+}
+
+
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 18px;
+  position: relative;
+  padding: 5px 0;
+}
+
+/* Underline animation on hover */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 /************************** tilting card effect  ***************************/
