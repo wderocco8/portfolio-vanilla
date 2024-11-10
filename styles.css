@@ -20,6 +20,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Courier New', monospace;
   background-image: linear-gradient(to bottom, var(--primary-color), #fddabe87);
@@ -239,7 +243,6 @@ ul {
     color: var(--link-hover-color);
   }
 }
-
 
 /************************** tilting card effect  ***************************/
 .tilt {
